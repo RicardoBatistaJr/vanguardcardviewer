@@ -1,6 +1,7 @@
 package com.vgproject.vanguardcardviewer.model;
 
 import com.google.gson.annotations.SerializedName;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,10 +16,10 @@ public class UnitCard {
     private String name;
     private String clan;
     @SerializedName("imageurlen")
-    private String imageUrlEn;
+    private String imageurlen;
     @SerializedName("imageurljp")
-    private String imageUrlJp;
+    private String imageurljp;
     private String flavor;
     private String effect;
-    private String set;
+    private List<String> sets;
 }

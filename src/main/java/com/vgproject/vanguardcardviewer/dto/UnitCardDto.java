@@ -11,4 +11,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class UnitCardDto {
     int id;
+    String clan;
+    String name;
 }

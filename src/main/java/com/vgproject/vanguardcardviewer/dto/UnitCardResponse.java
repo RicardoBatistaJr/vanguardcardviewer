@@ -21,8 +21,13 @@ public class UnitCardResponse {
         this.id = unitCard.getId();
         this.name = unitCard.getName();
         this.clan = unitCard.getClan();
-        if(unitCard.getImageUrlEn() != null || !unitCard.getImageUrlEn().isEmpty()){
-            this.imageUrl = unitCard.getImageUrlEn();
-        }else{ this.imageUrl = unitCard.getImageUrlJp();}
+
+        if(unitCard.getImageurlen() == null || unitCard.getImageurlen().equals("")){
+            this.imageUrl = unitCard.getImageurljp();
+        }else{ this.imageUrl = unitCard.getImageurlen();}
+
+//        if(unitCard.getImageUrlEn() == null || unitCard.getImageUrlEn().equals("")){
+//            this.imageUrl = unitCard.getImageUrlJp();
+//        }else{ this.imageUrl = unitCard.getImageUrlEn();}
     }
 }
