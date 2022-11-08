@@ -16,5 +16,15 @@ public class UnitCardResponse {
     private int id;
     private String name;
     private String clan;
-    private String imageurlen;
+    private String imageurl;
+
+    public UnitCardResponse(@NonNull UnitCard unitCard){
+        this.id = unitCard.getId();
+        this.name = unitCard.getName();
+        this.clan = unitCard.getClan();
+        if(unitCard.getImageurlen() != null || !unitCard.getImageurlen().isEmpty()){
+            this.imageurl = unitCard.getImageurlen();
+        }else{ this.imageurl = unitCard.getImageurljp();}
+    }
+
 }

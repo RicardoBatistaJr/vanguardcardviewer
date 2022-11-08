@@ -12,5 +12,5 @@ import org.springframework.stereotype.Component;
 @NoArgsConstructor
 @AllArgsConstructor
 public class JsonIncome {
-    List<UnitCardResponse> data;
+    List<UnitCard> data;
 }
