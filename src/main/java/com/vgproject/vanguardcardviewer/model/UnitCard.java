@@ -15,9 +15,7 @@ public class UnitCard {
     private int id;
     private String name;
     private String clan;
-    @SerializedName("imageurlen")
     private String imageurlen;
-    @SerializedName("imageurljp")
     private String imageurljp;
     private String flavor;
     private String effect;

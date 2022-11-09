@@ -22,9 +22,9 @@ public class UnitCardResponse {
         this.id = unitCard.getId();
         this.name = unitCard.getName();
         this.clan = unitCard.getClan();
-        if(unitCard.getImageurlen() != null || !unitCard.getImageurlen().isEmpty()){
-            this.imageurl = unitCard.getImageurlen();
-        }else{ this.imageurl = unitCard.getImageurljp();}
+        if(unitCard.getImageurlen() == null || unitCard.getImageurlen().isEmpty()){
+            this.imageurl = unitCard.getImageurljp();
+        }else{ this.imageurl = unitCard.getImageurlen();}
     }
 
 }
