@@ -1,6 +1,6 @@
 package com.vgproject.vanguardcardviewer.client;
 
-import com.vgproject.vanguardcardviewer.config.CardSearchClientFallbackFactory;
+import com.vgproject.vanguardcardviewer.config.ClientFallbackFactory;
 import com.vgproject.vanguardcardviewer.config.CardSearchInterfaceConfig;
 import com.vgproject.vanguardcardviewer.dto.UnitCardDto;
 import com.vgproject.vanguardcardviewer.model.Data;
@@ -9,9 +9,9 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-@FeignClient(value="cardSearchFeignClient", url="${api.Baseurl}",
+@FeignClient(value="cardSearchFeignClient", url="${api.BaseUrl}",
                                             configuration = CardSearchInterfaceConfig.class,
-                                            fallbackFactory = CardSearchClientFallbackFactory.class
+                                            fallbackFactory = ClientFallbackFactory.class
                                             )
 public interface CardSearchClient {
 

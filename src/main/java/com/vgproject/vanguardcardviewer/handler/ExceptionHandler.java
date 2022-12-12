@@ -22,7 +22,7 @@ public class ExceptionHandler
     }
 
     @org.springframework.web.bind.annotation.ExceptionHandler({CardNotFoundException.class, MethodArgumentTypeMismatchException.class})
-    public final ResponseEntity<ExceptionResponse> handleBadRequest (Exception ex, WebRequest request){
+    public final ResponseEntity<ExceptionResponse> handleBadRequestException (Exception ex, WebRequest request){
         ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), ex.getMessage(),
             request.getDescription(false));
         return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);

@@ -20,4 +20,8 @@ public class UnitCard {
     private String flavor;
     private String effect;
     private List<String> sets;
+
+    public UnitCard(String name, String imageurlen) {
+        this.name = name;
+    }
 }

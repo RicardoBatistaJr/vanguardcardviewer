@@ -33,5 +33,4 @@ public class CardSearchService {
         }
         return response;
     }
-
 }
