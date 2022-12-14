@@ -22,6 +22,8 @@ public class CardSearchController {
     private CardSearchService cardSearchService; //Add final in case of use Constructor
 
 //    public CardSearchController(CardSearchService cardSearchService) {this.cardSearchService = cardSearchService;}
+
+
     @GetMapping("/getCardById")
     @ResponseStatus(HttpStatus.OK)
     UnitCardResponse getCardById(@RequestParam ("id") Integer id){
