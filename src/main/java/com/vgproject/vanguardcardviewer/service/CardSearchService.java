@@ -8,11 +8,13 @@ import com.vgproject.vanguardcardviewer.model.UnitCard;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 public class CardSearchService {
+    @Autowired
     public final CardSearchClient cardSearchClient;
 
     public UnitCardResponse getCardById(Integer id){

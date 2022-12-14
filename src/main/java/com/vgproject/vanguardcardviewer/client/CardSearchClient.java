@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-@FeignClient(value="cardSearchFeignClient", url="${api.BaseUrl}",
+@FeignClient(value="cardSearchFeignClient", url="https://card-fight-vanguard-api.ue.r.appspot.com/api/v1",
                                             configuration = CardSearchInterfaceConfig.class,
                                             fallbackFactory = ClientFallbackFactory.class
                                             )

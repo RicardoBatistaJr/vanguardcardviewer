@@ -4,9 +4,10 @@ import java.util.List;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
-@Component
+
 @lombok.Data
 @NoArgsConstructor
+@Component
 public class Data {
     List<UnitCard> data;
 

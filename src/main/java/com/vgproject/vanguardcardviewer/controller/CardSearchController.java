@@ -6,6 +6,7 @@ import com.vgproject.vanguardcardviewer.model.UnitCard;
 import com.vgproject.vanguardcardviewer.service.CardSearchService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,10 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/v1")
-@RequiredArgsConstructor
 public class CardSearchController {
 
-    private final CardSearchService cardSearchService;
+    @Autowired
+    private CardSearchService cardSearchService; //Add final in case of use Constructor
+
+//    public CardSearchController(CardSearchService cardSearchService) {this.cardSearchService = cardSearchService;}
 
     @GetMapping("/getCardById")
     @ResponseStatus(HttpStatus.OK)
