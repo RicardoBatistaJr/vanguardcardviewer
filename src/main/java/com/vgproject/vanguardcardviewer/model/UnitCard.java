@@ -23,5 +23,6 @@ public class UnitCard {
 
     public UnitCard(String name, String imageurlen) {
         this.name = name;
+        this.imageurlen = imageurlen;
     }
 }

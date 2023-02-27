@@ -14,17 +14,19 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class CardSearchService {
-    @Autowired
+
     public final CardSearchClient cardSearchClient;
 
     public UnitCardResponse getCardById(Integer id){
-        UnitCardResponse response = new UnitCardResponse(cardSearchClient.getCardById(id));
+        UnitCard teste = cardSearchClient.getCardById(id);
+        UnitCardResponse response = new UnitCardResponse(teste);
         return response;
     }
 
-    public List<UnitCardResponse> getCards(UnitCardDto unitCardDto){
-        List<UnitCard> cards = cardSearchClient.getCards(unitCardDto).getData();
-        if(cards.isEmpty()) throw new CardNotFoundException();
+    public List<UnitCardResponse> getCards(UnitCardDto unitCardDto, Integer page){
+        List<UnitCard> cards = cardSearchClient.getCards(unitCardDto, page).getData();
+//        if(cards.isEmpty()) throw new CardNotFoundException();'
+
          return parseToUnitCardResponse(cards);
     }
     private List<UnitCardResponse> parseToUnitCardResponse(List<UnitCard> unitCards){

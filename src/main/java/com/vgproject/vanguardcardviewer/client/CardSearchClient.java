@@ -19,6 +19,6 @@ public interface CardSearchClient {
     UnitCard getCardById(@RequestParam("id") Integer id);
 
     @GetMapping("/cards")
-    Data getCards(@SpringQueryMap UnitCardDto unitCardDto);
+    Data getCards(@SpringQueryMap UnitCardDto unitCardDto, @RequestParam ("page") Integer page);
 
 }

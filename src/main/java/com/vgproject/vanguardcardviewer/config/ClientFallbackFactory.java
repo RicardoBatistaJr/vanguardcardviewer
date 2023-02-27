@@ -4,7 +4,6 @@ import com.vgproject.vanguardcardviewer.client.CardSearchClient;
 import com.vgproject.vanguardcardviewer.dto.UnitCardDto;
 import com.vgproject.vanguardcardviewer.model.Data;
 import com.vgproject.vanguardcardviewer.model.UnitCard;
-import java.util.ArrayList;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,14 +20,14 @@ public class ClientFallbackFactory implements FallbackFactory<CardSearchClient>,
 
     @Override
     public CardSearchClient create(Throwable cause) {
-        final var unitCard = new UnitCard("not_found", imageUrl);
+        final var unitCard = new UnitCard("not_found", "https://m.media-amazon.com/images/I/8187kSHhJCL._AC_SY606_.jpg  ");
         return new CardSearchClient() {
             @Override
             public UnitCard getCardById(Integer id) {
                 return unitCard;
             }
             @Override
-            public Data getCards(UnitCardDto unitCardDto) {
+            public Data getCards(UnitCardDto unitCardDto, Integer page) {
                 return new Data(List.of(unitCard));
             }
         };
@@ -40,7 +39,7 @@ public class ClientFallbackFactory implements FallbackFactory<CardSearchClient>,
     }
 
     @Override
-    public Data getCards(UnitCardDto unitCardDto) {
+    public Data getCards(UnitCardDto unitCardDto, Integer page) {
         return null;
     }
 }

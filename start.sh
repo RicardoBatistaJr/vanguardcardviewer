@@ -1,1 +1,1 @@
-./mvnw spring-boot:start
+./mvnw clean spring-boot:run

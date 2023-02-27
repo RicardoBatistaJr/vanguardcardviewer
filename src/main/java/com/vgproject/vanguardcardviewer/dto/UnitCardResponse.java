@@ -18,10 +18,16 @@ public class UnitCardResponse {
     private String clan;
     private String imageurl;
 
+    private String effect;
+
+    private String flavor;
+
     public UnitCardResponse(@NonNull UnitCard unitCard){
         this.id = unitCard.getId();
         this.name = unitCard.getName();
         this.clan = unitCard.getClan();
+        this.effect = unitCard.getEffect();
+        this.flavor = unitCard.getFlavor();
         if(unitCard.getImageurlen() == null || unitCard.getImageurlen().isEmpty()){
             this.imageurl = unitCard.getImageurljp();
         }else{ this.imageurl = unitCard.getImageurlen();}
